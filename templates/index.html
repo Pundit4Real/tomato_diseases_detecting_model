@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='fontawesome/css/all.min.css')}}" >
+    <title>Tomato Leaf Disease Detection</title>
+</head>
+<body id="body">
+    <main class="my-0">
+        <header class="header fixed w-full top-0" id="header">
+            <nav class="nav mx-auto py-4 bg-opacity-50 bg-gray-800 px-2 w-full" id="nav">
+                <div class="container mx-auto text-center flex items-center justify-between">
+                    <a href="#hero-section" class="logo">
+                        <span class="text-2xl text-white">Tomota Leaf Disease Detection</span>
+                    </a>
+    
+                    <div class="flex items-center gap-6 hidden md:flex nav-link">
+                        <a href="#hero-section" class="link p-2 px-3 rounded-md bg-transparent text-white   ">Home</a>
+                        <a href="#features-section" class="link p-2 px-3 rounded-md bg-transparent text-white   ">Features</a>
+                        <a href="#detection-section" class="p-2 px-6 md:w-[100px] rounded-md bg-Blue text-white  ">Detect</a>
+                    </div>
+                    <!-- Hamburger -->
+                    <div id="hamburger" class="flex items-center justify-center hamburger-wrapper md:hidden text-white w-[50px] h-[50px] rounded-full hover:bg-opacity-50 hover:bg-gray-300 cursor-pointer"><span class="fa fa-bars text-2xl"></span></div>
+                </div>
+            </nav>
+            <div class="hidden absolute top-[100%] right-[0] menu-wrapper bg-opacity-50 bg-gray-800 h-[50vh] w-[40%] p-2" id="menu-wrapper">
+                <div class="flex items-center flex-col gap-6 nav-link">
+                    <a href="#hero-section" class="link p-2 px-3 rounded-md bg-transparent text-white   ">Home</a>
+                    <a href="#features-section" class="link p-2 px-3 rounded-md bg-transparent text-white   ">Features</a>
+                    <a href="#detection-section" class="p-2 px-6 md:w-[100px] rounded-md bg-Blue text-white  ">Detect</a>
+                </div>
+            </div>
+        </header>
+        <div class="container mx-auto" id="hero-section">
+            <div class="flex flex-col h-[100vh] justify-center gap-6">
+                <div class="mx-auto text-center text-white mt-6">
+                    <p class="text-3xl md:text-5xl ">Welcome To Tomato Leaf Detection</p>
+                    <p class="text-center md:w-80%] w-[90%] mx-auto my-2">Revolutioning Tomato Farming with AI for a Healthier Harvest </p>
+                </div>
+                <a href="#features-section" class="flex items-center justify-center"><button type="submit" form="form" id="submit-btn"
+                    class=" px-5 py-3.5 w-[200px] text-center rounded-md text-white text-sm font-medium outline-none bg-Blue hover:bg-Blue active:bg-DarkBlue">Learn More</button></a>
+            </div>
+        </div>
+    </main>
+    <!-- Floating Button -->
+    <button id="floating-button" class="hidden w-[20px] h-[20px] p-4 flex justify-center items-center bg-Blue shadow-xl rounded-md text-white fixed md:bottom-[20%] bottom-[10%] right-2"> <span class="fa fa-chevron-up"></span></button>
+
+    <!-- Features -->
+    <section class="mx-auto py-2 h-auto" id="features-section">
+        <p class="text-center text-3xl"><span class="tag w-[110px]">Features</span></p>
+        <div class="feature-cards container mx-auto my-6  px-2 md:px-0">
+            <div class="flex flex-col md:flex-row items-center md:justify-between space-y-4 md:space-y-0">
+            <div class="feature md:w-[30%] w-full h-[30vh] border-2 border-gray-400 rounded-xl text-center">
+                <div class="flex flex-col justify-center items-center gap-4 w-full h-full">
+                    <span class="fa fa-robot text-3xl text-center text-gray-800"></span>
+                <p class="text-2xl ">Improved ML Model</p>
+                <p>Harnessing the power of CNN and XGBoost, our model is very efficient and effective</p>
+                </div>
+            </div>
+            <div class="feature md:w-[30%] w-full h-[30vh] border-2 border-gray-400 rounded-xl text-center">
+                <div class="flex flex-col justify-center items-center gap-4 w-full h-full">
+                    <span class="fa fa-leaf text-3xl text-center text-gray-800"></span>
+                <p class="text-2xl ">9 Type of Diseases</p>
+                <p>Our model can detect up to 9 type of tomato leaf diseases</p>
+                </div>
+            </div>
+            <div class="feature md:w-[30%] w-full h-[30vh] border-2 border-gray-400 rounded-xl text-center">
+                <div class="flex flex-col justify-center items-center gap-4 w-full h-full">
+                    <span class="fa fa-flask text-3xl text-center text-gray-800"></span>
+                <p class="text-2xl ">Solutions</p>
+                <p>A successfull classification returns methods on how to at least, mitigate of the classified disease</p>
+                </div>
+            </div>
+            </div>
+        </div>
+
+        <div class="container mx-auto my-6 px-2 md:px-0" style="padding: 5em 0 0 0;">
+            <div class="flex items-start justify-between">
+                <div class="image w-[45%] hidden md:block">
+                    <img src="{{url_for('static',filename='background.jpg' )}}" class="w-full rounded-lg" alt="">
+                </div>
+                <div class="md:w-[45%] w-full">
+                    <div class="flex flex-col items-center gap-4 w-full">
+                        <p class="text-3xl text-center mb-3">Why Choose Tomato?</p>
+                        <p class="flex gap-2"><span class="w-[10px] h-[10px] p-3 rounded-full text-white flex items-center justify-center bg-Blue">1</span> Tomatoes are one of the most widely grown and consumed crops worldwide. Early detection of leaf diseases can prevent widespread crop damage, ensuring healthy growth and maintaining high yields.</p>
+                        <p class="flex gap-2"><span class="w-[10px] h-[10px] p-3 rounded-full text-white flex items-center justify-center bg-Blue">2</span>Traditional disease detection methods involve manual inspection by experts, which is time-consuming, labor-intensive, and prone to human error. An automated model can provide consistent and rapid results.</p>
+                        <p class="flex gap-2"><span class="w-[10px] h-[10px] p-3 rounded-full text-white flex items-center justify-center bg-Blue">3</span>
+                            By identifying diseases early, farmers can apply targeted treatments, reducing the unnecessary use of chemical pesticides. This helps promote environmentally friendly farming and reduces production costs
+                        </p>
+                        <a href="#detection-section">
+                            <button
+                        class="w-full md:w-auto px-5 py-3.5 text-center rounded-md text-white text-sm font-medium outline-none bg-Blue hover:bg-DarkBlue active:bg-DarkBlue">Start Now</button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+
+    </section>
+
+    <!-- Case Study -->
+    <section class="py-2 h-auto" id="case-study-section">
+
+        <div class="container mx-auto px-2 md:px-auto">
+            <p class="text-center text-3xl"><span class="tag w-[150px]">Case Study</span></p>
+            <div class="md:w-[80%] w-full mx-auto my-4">
+                <div class="flex items-center justify-center flex-wrap gap-2">
+
+                    
+
+                    <div class="case-study w-[48%] md:w-[30%] h-[500px] text-center rounded-lg border-2 border-gray-300">
+                        <div class="flex flex-col w-full h-full justify-center-items-center gap-2">
+                            <img src=" {{ url_for('static', filename='case_study/Bacteria Spot.JPG')}}" class="rounded-tl-lg rounded-tr-lg w-full" alt="">
+                            <p class="text-center font-bold">Bacteria Spot</p>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Error corrupti, perspiciatis sapiente laboriosam totam magnam.</p>
+                        </div>
+                    </div>
+                    <div class="case-study w-[48%] md:w-[30%] h-[500px] text-center rounded-lg border-2 border-gray-300">
+                        <div class="flex flex-col w-full h-full justify-center-items-center gap-2">
+                            <img src=" {{ url_for('static', filename='case_study/Early Blight.JPG')}}" class="rounded-tl-lg rounded-tr-lg w-full" alt="">
+                            <p class="text-center font-bold">Early Blight</p>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Error corrupti, perspiciatis sapiente laboriosam totam magnam.</p>
+                        </div>
+                    </div>
+                    <div class="case-study w-[48%] md:w-[30%] h-[500px] text-center rounded-lg border-2 border-gray-300">
+                        <div class="flex flex-col w-full h-full justify-center-items-center gap-2">
+                            <img src=" {{ url_for('static', filename='case_study/Late Blight.JPG')}}" class="rounded-tl-lg rounded-tr-lg w-full" alt="">
+                            <p class="text-center font-bold">Late Blight</p>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Error corrupti, perspiciatis sapiente laboriosam totam magnam.</p>
+                        </div>
+                    </div>
+                    <div class="case-study w-[48%] md:w-[30%] h-[500px] text-center rounded-lg border-2 border-gray-300">
+                        <div class="flex flex-col w-full h-full justify-center-items-center gap-2">
+                            <img src=" {{ url_for('static', filename='case_study/Leaf Mold.JPG')}}" class="rounded-tl-lg rounded-tr-lg w-full" alt="">
+                            <p class="text-center font-bold">Leaf Mold</p>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Error corrupti, perspiciatis sapiente laboriosam totam magnam.</p>
+                        </div>
+                    </div>
+                    <div class="case-study w-[48%] md:w-[30%] h-[500px] text-center rounded-lg border-2 border-gray-300">
+                        <div class="flex flex-col w-full h-full justify-center-items-center gap-2">
+                            <img src=" {{ url_for('static', filename='case_study/Septoria Leaf Spot.JPG')}}" class="rounded-tl-lg rounded-tr-lg w-full" alt="">
+                            <p class="text-center font-bold">Septoria Leaf Spot</p>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Error corrupti, perspiciatis sapiente laboriosam totam magnam.</p>
+                        </div>
+                    </div>
+                    <div class="case-study w-[48%] md:w-[30%] h-[500px] text-center rounded-lg border-2 border-gray-300">
+                        <div class="flex flex-col w-full h-full justify-center-items-center gap-2">
+                            <img src=" {{ url_for('static', filename='case_study/Spider Mites.JPG')}}" class="rounded-tl-lg rounded-tr-lg w-full" alt="">
+                            <p class="text-center font-bold">Spider Mites</p>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Error corrupti, perspiciatis sapiente laboriosam totam magnam.</p>
+                        </div>
+                    </div>
+                    <div class="case-study w-[48%] md:w-[30%] h-[500px] text-center rounded-lg border-2 border-gray-300">
+                        <div class="flex flex-col w-full h-full justify-center-items-center gap-2">
+                            <img src=" {{ url_for('static', filename='case_study/Target Spot.JPG')}}" class="rounded-tl-lg rounded-tr-lg w-full" alt="">
+                            <p class="text-center font-bold">Target Spot</p>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Error corrupti, perspiciatis sapiente laboriosam totam magnam.</p>
+                        </div>
+                    </div>
+                    <div class="case-study w-[48%] md:w-[30%] h-[500px] text-center rounded-lg border-2 border-gray-300">
+                        <div class="flex flex-col w-full h-full justify-center-items-center gap-2">
+                            <img src=" {{ url_for('static', filename='case_study/Tomato Leaf Yellow Curl.JPG')}}" class="rounded-tl-lg rounded-tr-lg w-full" alt="">
+                            <p class="text-center font-bold">Yellow Curl Leaf</p>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Error corrupti, perspiciatis sapiente laboriosam totam magnam.</p>
+                        </div>
+                    </div>
+                    <div class="case-study w-[48%] md:w-[30%] h-[500px] text-center rounded-lg border-2 border-gray-300">
+                        <div class="flex flex-col w-full h-full justify-center-items-center gap-2">
+                            <img src=" {{ url_for('static', filename='case_study/Tomato Mozaic.JPG')}}" class="rounded-tl-lg rounded-tr-lg w-full" alt="">
+                            <p class="text-center font-bold">Tomato Mozaic</p>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Error corrupti, perspiciatis sapiente laboriosam totam magnam.</p>
+                        </div>
+                    </div>
+                    <div class="case-study w-[48%] md:w-[30%] h-[500px] text-center rounded-lg border-2 border-gray-300">
+                        <div class="flex flex-col w-full h-full justify-center-items-center gap-2">
+                            <img src=" {{ url_for('static', filename='case_study/Healthy.JPG')}}" class="rounded-tl-lg rounded-tr-lg w-full" alt="">
+                            <p class="text-center font-bold">Healthy Leaf</p>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Error corrupti, perspiciatis sapiente laboriosam totam magnam.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- Detection page -->
+    <section class="py-2 h-[100vh]" id="detection-section">
+        
+        <div class="container mx-auto space-y-6 px-2 md:px-0">
+            <p class="text-center text-3xl"><span class="tag w-[90px]">Detect</span></p>
+
+            <div class="md:flex items-start gap-2 justify-between w-full my-4">
+                <div class="md:w-[45%] w-full h-auto ">
+                    <div class="preview w-full h-[300px]" >
+                        <img src="" id="preview" class="w-full h-full rounded-md" alt="">
+                    </div>
+                    <form  id="form" name="form">
+                        
+                        <div class="w-max mx-auto my-4">
+                            <div class="w-max flex items-center justify-center gap-4 " style="">
+                                <label for="image-input"   class=" flex items-center bg-gray-800 hover:bg-gray-700 text-white text-base px-5 py-3 outline-none rounded cursor-pointer mx-auto font-[sans-serif]">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 mr-2 fill-white inline" viewBox="0 0 32 32">
+                                    <path
+                                        d="M23.75 11.044a7.99 7.99 0 0 0-15.5-.009A8 8 0 0 0 9 27h3a1 1 0 0 0 0-2H9a6 6 0 0 1-.035-12 1.038 1.038 0 0 0 1.1-.854 5.991 5.991 0 0 1 11.862 0A1.08 1.08 0 0 0 23 13a6 6 0 0 1 0 12h-3a1 1 0 0 0 0 2h3a8 8 0 0 0 .75-15.956z"
+                                        data-original="#000000" />
+                                    <path
+                                        d="M20.293 19.707a1 1 0 0 0 1.414-1.414l-5-5a1 1 0 0 0-1.414 0l-5 5a1 1 0 0 0 1.414 1.414L15 16.414V29a1 1 0 0 0 2 0V16.414z"
+                                        data-original="#000000" />
+                                    </svg>
+                                        Select leaf image
+                                    <input type="file" id='image-input' name="image-input" class="hidden" />
+                                </label>
+                                <button type="submit" form="form" id="submit-btn"
+                                class=" px-5 py-3.5 w-[100px] text-center rounded-md text-white text-sm font-medium outline-none bg-Blue hover:bg-Blue active:bg-DarkBlue">classify</button>
+                     
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <!-- line -->
+                <div class="hidden md:block line bg-opacity-50 w-[1px] h-[80vh] bg-black rounded-md"></div>
+
+                <div class="md:w-[45%] w-full">
+                    
+                    <p class=""><span class="text-2xl">Condition:</span> <span class="condition text-red-500" id="condition"></span></p>
+                    <p id="confidence" class="text-2xl my-2"></p>
+                    <div class="flex items-start gap-2 my-4 causes-container" id="causes-container">
+                        <div class="flex items-center gap-1">
+                            <div class="rounded-full w-[10px] h-[10px] bg-Blue"></div> 
+                            <span class="font-bold title" id="causes-title">Causes</span>
+                        </div>
+                        <div class="flex flex-col items-start" id="causes">
+                            
+                        </div>
+                    </div>
+
+                    <div class="flex items-start gap-2" id="preventions-container">
+                        <div class="flex items-center gap-1"><div class="rounded-full w-[10px] h-[10px] bg-Blue"></div> <span class="font-bold title" id="preventions-title">Preventions</span></div>
+                        <div class="flex flex-col items-start" id="preventions">
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="{{ url_for('static', filename='script.js')}}"></script>
+    <script src="{{ url_for('static', filename='fontawesome/js/all.min.js')}}"></script>
+</body>
+</html>
